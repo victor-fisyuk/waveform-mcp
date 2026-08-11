@@ -17,7 +17,7 @@ dependencies = [
 ]
 
 [project.scripts]
-waveform-mcp = "waveform_mcp.server:main"
+waveform-mcp = "waveform_mcp.server:cli"
 
 [project.optional-dependencies]
 dev = [

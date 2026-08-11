@@ -837,6 +837,9 @@ async def main():
             ),
         )
 
+def cli():
+    """Synchronous entry point for CLI packaging."""
+    asyncio.run(main())
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    cli()
