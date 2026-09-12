@@ -14,16 +14,17 @@ Get hierarchical list of signals from waveform file with optional regex filterin
 {"tool": "get_signal_list", "arguments": {"waveform_file": "sim.vcd", "pattern": "cpu.*"}}
 ```
 
-### get_signal_transitions  
+### get_signal_transitions
 Extract signal transitions within specified time ranges.
 - `waveform_file` (required): Path to waveform file
 - `signal_name` (required): Full signal name
 - `start_time` (optional): Start time, default 0
 - `end_time` (optional): End time, default end of simulation
+- `limit` (optional): Maximum number of transitions to return, default 10
 
 **Example:**
 ```json
-{"tool": "get_signal_transitions", "arguments": {"waveform_file": "sim.vcd", "signal_name": "clk", "start_time": 0, "end_time": 100}}
+{"tool": "get_signal_transitions", "arguments": {"waveform_file": "sim.vcd", "signal_name": "clk", "start_time": 0, "end_time": 100, "limit": 20}}
 ```
 
 ### get_waveform_length
@@ -37,12 +38,13 @@ Get the total simulation length/duration.
 
 ### execute_wal_expression
 Execute WAL expressions for advanced waveform analysis.
-- `waveform_file` (required): Path to waveform file  
+- `waveform_file` (required): Path to waveform file
 - `expression` (required): WAL expression to execute
+- `limit` (optional): Maximum number of result items to return, default 10
 
 **Example:**
 ```json
-{"tool": "execute_wal_expression", "arguments": {"waveform_file": "sim.vcd", "expression": "(find (= clk 1))"}}
+{"tool": "execute_wal_expression", "arguments": {"waveform_file": "sim.vcd", "expression": "(find (= clk 1))", "limit": 20}}
 ```
 
 ### get_wal_help
@@ -76,6 +78,8 @@ Built on [WAL (Waveform Analysis Language)](https://github.com/ics-jku/wal), a d
 ## Installation
 
 ```bash
+python3 -m venv .venv
+source .venv/bin/activate
 pip install -e .
 ```
 

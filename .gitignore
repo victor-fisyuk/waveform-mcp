@@ -11,8 +11,6 @@ src/waveform_mcp.egg-info/
 # macOS
 .DS_Store
 
-CLAUDE.md
-
 # Environments
 .python-version
 .venv/
