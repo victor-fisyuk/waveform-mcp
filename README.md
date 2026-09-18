@@ -2,6 +2,17 @@
 
 MCP (Model Context Protocol) server for RTL waveform analysis using WAL (Waveform Analysis Language).
 
+> **Note on this fork**
+>
+> This is a fork created for the [Voodoo FPGA project](https://github.com/victor-fisyuk/voodoo-fpga-public).
+> It improves the existing tools and adds new ones. I use it heavily and it works well for me, but
+> **the changes are draft quality**: they are not completely tested, and the source code needs
+> refactoring before it could be called production quality. Expect rough edges, and treat the
+> behavior described below as what works in my own use rather than as a guarantee.
+>
+> Published **as is**, with no support, no warranty and no promise of maintenance or stable
+> interfaces. Use it at your own risk.
+
 ## Time arguments
 
 All time arguments (`start_time`, `end_time`, `start_step`, `end_step`, `step`) are **time step
